@@ -1,0 +1,37 @@
+<html>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</head> 
+<body>
+    <table id="drugtable" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+    <tr>
+        <th class="th-sm">Drug ID</th>
+        <th class="th-sm">Drug Name</th>
+        <th class="th-sm">Molecule</th>    
+    </tr>
+    </thead>
+    <tbody>
+    {% for drug in drugs %}
+	    <tr>
+            <td>{{drug.drugid}}</td>
+            <td>{{drug.drugname}}</td>
+	        <td>{{drug.molecule}}</td> 
+        </tr>		 
+    {% endfor %}
+	</tbody>
+    </table>  
+<script>
+$(document).ready(function(){
+    $('#drugtable').dataTable();
+});
+</script>
+
+</body>
+</html>
